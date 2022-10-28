@@ -1,4 +1,4 @@
-.squareDiv {
+.cell, .cell2 {
     border: 1px solid gray;
     min-width: 20px;
     min-height: 20px;
@@ -6,6 +6,3 @@
     margin-right: 2px;
   }
 
-#column {
-  display: block;
-}
