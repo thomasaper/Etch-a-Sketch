@@ -1,46 +1,29 @@
+const container = document.querySelector("#container"); // Reference to container
+const rows = document.getElementsByClassName("gridRow"); // Reference to gridRow
+const cells = document.getElementsByClassName("cell"); // Reference to cell
 
-// Creating a webpage with a 16x16 grid of square divs
+// Creates a default grid sized n
+function defaultGrid(n) {
+    makeRows(n);
+    makeCells(n);
+}
 
-const body = document.querySelector('body'); // Reference to body
-
-const grid = document.createElement('div');  // Creating div for the grid
-grid.classList.add('grid'); // adding class grid
-body.appendChild(grid); // appending div for grid to body
-
-const rows = document.createElement('div'); // Creating div for rows 
-rows.classList.add('rows'); // adding class rows
-grid.appendChild(rows); // appending div for rows to grid
-
-const singleRow = document.createElement('div'); // Creating div for singleRow
-singleRow.classList.add('singleRow'); // adding class singeRow
-rows.appendChild(singleRow); // appending div singleRow to rows
-
-
-
-const makeSingleRow = function(n) {
-
-    for (let s=0; s<n; s++) {
-        const cell = document.createElement('div'); // Creating div for cells
-        cell.classList.add('cell'); // adding class cell
-        singleRow.appendChild(cell); // appending div cell to singleRow
-    }
+// Creates rows
+function makeRows(rowNum) {
+    for (r = 0; r < rowNum; r++) {
+        const row = document.createElement("div");
+        container.appendChild(row).className = "gridRow";
+    };
 };
 
-
-function makeRows(n) {
-
-    for (let r=0; r<n; r++) {
-        //makeSingleRow(n);
-        
-    }
+// Creates cells
+function makeCells(cellNum) {
+    for (i = 0; i < rows.length; i++) {
+        for (j = 0; j < cellNum; j++) {
+            const newCell = document.createElement("div");
+            rows[j].appendChild(newCell).className = "cell";
+        };
+    };
 };
 
-
-
-    makeSingleRow(16)
-    makeRows(16);
-
-
-
-
-
+defaultGrid(16);

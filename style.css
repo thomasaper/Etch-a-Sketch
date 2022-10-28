@@ -1,8 +1,6 @@
-.cell, .cell2 {
-    border: 1px solid gray;
-    min-width: 20px;
-    min-height: 20px;
-    display: inline-block;
-    margin-right: 2px;
-  }
-
+.cell {
+  border: 1px solid gray;
+  min-width: 50px;
+  min-height: 50px;
+  display: inline-block;
+}
