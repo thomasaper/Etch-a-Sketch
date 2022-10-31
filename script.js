@@ -31,7 +31,7 @@ function makeCells(cellNum) {
 };
 
 // calling the function
-defaultGrid(500);
+defaultGrid(prompt("Choose grid size between 5-64!", "16"));
 
 
 
@@ -48,3 +48,4 @@ container.addEventListener('mouseover', function (e) {
         changeColor(target);
     }
   });
+
