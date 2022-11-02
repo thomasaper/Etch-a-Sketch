@@ -1,10 +1,11 @@
 ///// Create a webpage with a 16x16 grid of square divs. /////
 
 
-// Important consts for grid
+// Important consts 
 const container = document.querySelector("#container"); // Reference to container
 const rows = document.getElementsByClassName("gridRow"); // Reference to gridRow
 const cell = document.getElementsByClassName("cell"); // Reference to cell
+const btn = document.querySelector('#btn'); // Reference to button
 
 // Creates a default grid sized n
 function defaultGrid(n) {
@@ -47,5 +48,12 @@ container.addEventListener('mouseover', function (e) {
     if(target.matches("div.cell")){
         changeColor(target);
     }
+  });
+
+
+// change gridsize with button
+
+  btn.addEventListener('click', () => {
+    defaultGrid(prompt("Choose grid size between 5-64!", "16"));
   });
 
