@@ -5,12 +5,13 @@
 const container = document.querySelector("#container"); // Reference to container
 const rows = document.getElementsByClassName("gridRow"); // Reference to gridRow
 const cell = document.getElementsByClassName("cell"); // Reference to cell
-const btn = document.querySelector('#btn'); // Reference to button
+const btn = document.querySelector('#btn'); // Reference to button New Grid
+
 
 // Creates a default grid sized n
-function defaultGrid(n) {
-    makeRows(n);
-    makeCells(n);
+function defaultGrid(number) {
+    makeRows(number);
+    makeCells(number);
 };
 
 // Creates rows
@@ -31,9 +32,6 @@ function makeCells(cellNum) {
     };
 };
 
-// calling the function
-defaultGrid(prompt("Choose grid size between 5-64!", "16"));
-
 
 
 //change color when mouseover 
@@ -51,9 +49,29 @@ container.addEventListener('mouseover', function (e) {
   });
 
 
-// change gridsize with button
+  function promptGrid() {
+    let number = prompt("Choose grid size between 5-64!", 16); 
+     if (number >= 5 && number <= 64) {
+         defaultGrid (number);
+     }else {
+         do {
+             number = prompt("Invalid size! Try Again! Make sure your value is between 5-64!");
+         }
+         while(number < 5 || number > 64);
+         defaultGrid (number);
+     }
+ }
+        
 
-  btn.addEventListener('click', () => {
-    defaultGrid(prompt("Choose grid size between 5-64!", "16"));
-  });
+//reset button
 
+const reset = document.querySelector('#reset');
+reset.addEventListener('click', () =>{
+     window.location.reload();
+});
+
+
+// calling the function
+promptGrid();
+
+ 
