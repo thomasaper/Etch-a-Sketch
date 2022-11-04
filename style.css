@@ -30,13 +30,13 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
+  flex:1; 
 }
 
 .cell {
-  min-width: 10px;
-  min-height: 10px;
   border: 1px solid black;
   background-color: rgb(212, 211, 211);
+  flex: 1;
   
 }
 
